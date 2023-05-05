@@ -6,14 +6,14 @@ class FinishpaymentData {
   FinishpaymentData({required this.member, required this.change});
 }
 
-//class Promotion {
+class PromotionsOfItemDetail {
+  List Promotions;
+}
 
-class Member {
-  late String username;
-  late int poin;
+class PromotionsOfItemDetail {
+  List Promotions;
+}
 
-  Member({
-    required this.username,
-    required this.poin,
-  });
+class ChangeDetail {
+  double change;
 }
