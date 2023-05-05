@@ -64,7 +64,7 @@ class _FinishState extends State<FinishPaymentView> {
                                 return ListTile(
                                     title: Text(
                                   "• โปรโมชั่น $index",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 20, color: Color(0xFF0E4E89)),
                                 ));
                               }),
@@ -82,10 +82,10 @@ class _FinishState extends State<FinishPaymentView> {
                     color: Colors.white,
                   ),
                   child: Container(
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           "ชื่อ : username",
                           style:
@@ -105,8 +105,8 @@ class _FinishState extends State<FinishPaymentView> {
                     ),
                   )),
               Container(
-                  margin: EdgeInsets.all(16),
-                  child: Text(
+                  margin: const EdgeInsets.all(16),
+                  child: const Text(
                     "เงินทอน 55.50 บาท",
                     style: TextStyle(
                         fontSize: 28,
