@@ -3,7 +3,11 @@ import 'package:mpos/Module/finishpayment_view_model.dart';
 import 'package:mpos/Module/memberdata.dart';
 
 class FinishPaymentView extends StatefulWidget {
-  const FinishPaymentView({super.key});
+  final String memberName;
+  final int poin;
+  const FinishPaymentView(
+      {Key? key, required this.memberName, required this.poin})
+      : super(key: key);
 
   @override
   State<FinishPaymentView> createState() => _FinishState();
@@ -11,7 +15,6 @@ class FinishPaymentView extends StatefulWidget {
 
 class _FinishState extends State<FinishPaymentView> {
   final FinishpaymentViewModel _viewModel = FinishpaymentViewModel();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,40 +81,9 @@ class _FinishState extends State<FinishPaymentView> {
               ),
 
               Container(
-                  margin: const EdgeInsets.all(8),
-                  height: 120,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.white,
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          "ชื่อ : ",
-                          style:
-                              TextStyle(fontSize: 20, color: Color(0xFF0E4E89)),
-                        ),
-                        Text(
-                          "จำนวนแต้ม",
-                          style:
-                              TextStyle(fontSize: 24, color: Color(0xFF0E4E89)),
-                        ),
-                        Text(
-                          "แต้มสะสมทั้งหมด : 2000",
-                          style:
-                              TextStyle(fontSize: 20, color: Color(0xFF0E4E89)),
-                        ),
-                      ],
-                    ),
-                  )),
-              Container(
                   margin: const EdgeInsets.all(16),
                   child: const Text(
-                    "เงินทอน 55.50 บาท",
+                    "เงินทอน  บาท",
                     style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
@@ -127,7 +99,7 @@ class _FinishState extends State<FinishPaymentView> {
                     style:
                         ElevatedButton.styleFrom(backgroundColor: Colors.grey),
                     onPressed: () {
-                      //ไปหน้าใบเสร็จ
+                      print(widget.memberName);
                     },
                     child: const Text(
                       "รับใบเสร็จ",
@@ -144,9 +116,7 @@ class _FinishState extends State<FinishPaymentView> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFFD2E6F9)),
-                    onPressed: () {
-                      //ไปหน้าแรก
-                    },
+                    onPressed: () {},
                     child: const Text(
                       "กลับหน้าแรก",
                       style: TextStyle(fontSize: 24, color: Color(0xFF0E4E89)),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Module/finishpayment_view.dart';
+import 'Module/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,9 +35,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         body:
-            FinishPaymentView() // This trailing comma makes auto-formatting nicer for build methods.
+            Home() // This trailing comma makes auto-formatting nicer for build methods.
         );
   }
 }
