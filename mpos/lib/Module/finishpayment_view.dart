@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mpos/Module/finishpayment_view_model.dart';
+import 'package:mpos/Module/memberdata.dart';
 
 class FinishPaymentView extends StatefulWidget {
   const FinishPaymentView({super.key});
@@ -8,6 +10,8 @@ class FinishPaymentView extends StatefulWidget {
 }
 
 class _FinishState extends State<FinishPaymentView> {
+  final FinishpaymentViewModel _viewModel = FinishpaymentViewModel();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +91,7 @@ class _FinishState extends State<FinishPaymentView> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          "ชื่อ : username",
+                          "ชื่อ : ",
                           style:
                               TextStyle(fontSize: 20, color: Color(0xFF0E4E89)),
                         ),
@@ -122,7 +126,9 @@ class _FinishState extends State<FinishPaymentView> {
                 child: ElevatedButton(
                     style:
                         ElevatedButton.styleFrom(backgroundColor: Colors.grey),
-                    onPressed: () {},
+                    onPressed: () {
+                      //ไปหน้าใบเสร็จ
+                    },
                     child: const Text(
                       "รับใบเสร็จ",
                       style: TextStyle(
@@ -138,7 +144,9 @@ class _FinishState extends State<FinishPaymentView> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFFD2E6F9)),
-                    onPressed: () {},
+                    onPressed: () {
+                      //ไปหน้าแรก
+                    },
                     child: const Text(
                       "กลับหน้าแรก",
                       style: TextStyle(fontSize: 24, color: Color(0xFF0E4E89)),
