@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:mpos/Module/Promotions.dart';
 import 'package:mpos/Module/finishpayment_view_model.dart';
 import 'package:mpos/Module/memberdata.dart';
 
 class FinishPaymentView extends StatefulWidget {
   final String memberName;
   final int poin;
+  final List<Promotions> promotions;
   const FinishPaymentView(
-      {Key? key, required this.memberName, required this.poin})
+      {Key? key,
+      required this.memberName,
+      required this.poin,
+      required this.promotions})
       : super(key: key);
 
   @override
@@ -66,11 +71,11 @@ class _FinishState extends State<FinishPaymentView> {
                         height: 100,
                         child: Expanded(
                           child: ListView.builder(
-                              itemCount: 15,
+                              itemCount: widget.promotions.length,
                               itemBuilder: (BuildContext context, int index) {
                                 return ListTile(
                                     title: Text(
-                                  "• โปรโมชั่น $index",
+                                  "• โปรโมชั่น ${widget.promotions[index].promotioname}",
                                   style: const TextStyle(
                                       fontSize: 20, color: Color(0xFF0E4E89)),
                                 ));
