@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mpos/Module/Promotions.dart';
 import 'package:mpos/Module/finishpayment_view.dart';
+import 'package:mpos/Module/memberdata.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -24,8 +25,11 @@ class _HomeState extends State<Home> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => FinishPaymentView(
-                              memberName: "Jirawat",
-                              poin: 15,
+                              memberdata: Memberdata(
+                                  id: "555",
+                                  memberUsername: "jirawat",
+                                  point: 5,
+                                  call: "0626209688"),
                               promotions: [
                                 Promotions(
                                     promotioname: "ซื้อ 1 แถม 1",
@@ -40,6 +44,7 @@ class _HomeState extends State<Home> {
                                     amount: 6,
                                     price: 5),
                               ],
+                              change: 50,
                             )),
                   );
                 },
@@ -50,8 +55,8 @@ class _HomeState extends State<Home> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => FinishPaymentView(
-                              memberName: "",
-                              poin: 0,
+                              memberdata: null,
+                              change: 0,
                               promotions: [
                                 Promotions(
                                     promotioname: "ซื้อ 1 แถม 1",

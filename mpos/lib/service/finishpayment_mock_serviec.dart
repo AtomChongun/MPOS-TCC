@@ -8,7 +8,7 @@ class FinishpaymentMockService implements FinishpaymentServiceInterface {
   Future<FinishpaymentData> fethData() async {
     return FinishpaymentData(
         member: Memberdata(
-            memberUsername: "jirawat", point: 15, call: "0626209688"),
+            id: "15", memberUsername: "jirawat", point: 15, call: "0626209688"),
         change: 55,
         promotions: [
           Promotions(promotioname: "ซื้อ 1 แถม 1", amount: 15, price: 300),

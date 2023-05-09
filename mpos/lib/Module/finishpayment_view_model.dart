@@ -13,7 +13,7 @@ class FinishpaymentViewModel {
 
   Future<String> getMemberName({required String call}) async {
     FinishpaymentData? Data = await service.fethData();
-    member = await Data.member;
+    member = Data.member;
     mUsername = member.memberUsername;
     return mUsername;
   }
