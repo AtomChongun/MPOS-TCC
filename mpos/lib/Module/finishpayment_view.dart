@@ -20,6 +20,17 @@ class FinishPaymentView extends StatefulWidget {
 
 class _FinishState extends State<FinishPaymentView> {
   final FinishpaymentViewModel _viewModel = FinishpaymentViewModel();
+  bool isVisible = true;
+  @override
+  initState() {
+    if (widget.memberName == "") {
+      setState(() {
+        isVisible = false;
+      });
+    }
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,17 +96,50 @@ class _FinishState extends State<FinishPaymentView> {
                 ),
               ),
 
+              Visibility(
+                visible: isVisible,
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
+                  height: 100,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "ชื่อ : ${widget.memberName}",
+                        style:
+                            TextStyle(fontSize: 20, color: Color(0xFF0E4E89)),
+                      ),
+                      const Text(
+                        "สะสมแต้ม",
+                        style:
+                            TextStyle(fontSize: 20, color: Color(0xFF0E4E89)),
+                      ),
+                      Text(
+                        "จำนวนเต้ม : ${widget.poin}",
+                        style:
+                            TextStyle(fontSize: 20, color: Color(0xFF0E4E89)),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+
               Container(
                   margin: const EdgeInsets.all(16),
-                  child: const Text(
-                    "เงินทอน  บาท",
-                    style: TextStyle(
+                  child: Text(
+                    "เงินทอน ${widget.poin} บาท",
+                    style: const TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   )),
 
-              //แต้ม
               Container(
                 height: 50,
                 width: 300,
@@ -121,7 +165,11 @@ class _FinishState extends State<FinishPaymentView> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFFD2E6F9)),
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        isVisible = !isVisible;
+                      });
+                    },
                     child: const Text(
                       "กลับหน้าแรก",
                       style: TextStyle(fontSize: 24, color: Color(0xFF0E4E89)),
