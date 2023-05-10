@@ -99,9 +99,8 @@ class _FinishState extends State<FinishPaymentView> {
               Visibility(
                 visible: isVisible,
                 child: Container(
-                  padding: const EdgeInsets.all(8),
-                  margin: const EdgeInsets.all(8),
-                  height: 100,
+                  padding: const EdgeInsets.all(16),
+                  height: 120,
                   width: 300,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
@@ -143,7 +142,7 @@ class _FinishState extends State<FinishPaymentView> {
               Container(
                 height: 50,
                 width: 300,
-                margin: const EdgeInsets.all(4),
+                margin: const EdgeInsets.all(8),
                 child: ElevatedButton(
                     style:
                         ElevatedButton.styleFrom(backgroundColor: Colors.grey),
@@ -161,7 +160,7 @@ class _FinishState extends State<FinishPaymentView> {
               Container(
                 height: 50,
                 width: 300,
-                margin: const EdgeInsets.all(4),
+                margin: const EdgeInsets.all(8),
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFFD2E6F9)),
