@@ -48,33 +48,20 @@ class _HomeState extends State<Home> {
                             )),
                   );
                 },
-                child: Text("สะสมแต้ม")),
+                child: const Text("สะสมแต้ม")),
             TextButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => FinishPaymentView(
+                        builder: (context) => const FinishPaymentView(
                               memberdata: null,
-                              change: 0,
-                              promotions: [
-                                Promotions(
-                                    promotioname: "ซื้อ 1 แถม 1",
-                                    amount: 6,
-                                    price: 5),
-                                Promotions(
-                                    promotioname: "ซื้อ 2 แถม 1",
-                                    amount: 6,
-                                    price: 5),
-                                Promotions(
-                                    promotioname: "ซื้อ 3 แถม 1",
-                                    amount: 6,
-                                    price: 5),
-                              ],
+                              change: null,
+                              promotions: [],
                             )),
                   );
                 },
-                child: Text("ไม่สะสมแต้ม"))
+                child: const Text("ไม่สะสมแต้ม"))
           ],
         ),
       ),
