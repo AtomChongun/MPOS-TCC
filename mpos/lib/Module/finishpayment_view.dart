@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mpos/Module/Promotions.dart';
+import 'package:mpos/Module/finishpayment_data.dart';
 import 'package:mpos/Module/finishpayment_view_model.dart';
 import 'package:mpos/Module/home.dart';
 import 'package:mpos/Module/memberdata.dart';
 
 class FinishPaymentView extends StatefulWidget {
-  final Memberdata? memberdata;
+  /*final Memberdata? memberdata;
   final double? change;
   final List<Promotions> promotions;
   const FinishPaymentView(
@@ -13,34 +14,31 @@ class FinishPaymentView extends StatefulWidget {
       required this.memberdata,
       required this.promotions,
       required this.change})
-      : super(key: key);
+      : super(key: key);*/
 
   @override
   State<FinishPaymentView> createState() => _FinishState();
 }
 
 class _FinishState extends State<FinishPaymentView> {
-  //final FinishpaymentViewModel _viewModel = FinishpaymentViewModel();
+  FinishpaymentViewModel viewModel = FinishpaymentViewModel();
+
   bool isVisibleMember = true;
   bool isVisiblePromo = true;
   bool isVisibleChange = true;
   @override
   initState() {
-    if (widget.memberdata?.memberUsername == null) {
+    /*if (_viewModel.getmemberDetail() == null) {
       setState(() {
         isVisibleMember = false;
       });
     }
-    if (widget.promotions.isEmpty) {
+    if (_viewModel. == null) {
       setState(() {
         isVisiblePromo = false;
       });
-    }
-    if (widget.change == null) {
-      setState(() {
-        isVisibleChange = false;
-      });
-    }
+    }*/
+    //_viewModel.getmemberDetail();
     super.initState();
   }
 
@@ -95,22 +93,23 @@ class _FinishState extends State<FinishPaymentView> {
                             )
                           ],
                         ),
-                        SizedBox(
+                        /*SizedBox(
                             height: 100,
                             child: Expanded(
                               child: ListView.builder(
-                                  itemCount: widget.promotions.length,
+                                  itemCount: _viewModel
+                                      .finishpaymentData?.promotions.length,
                                   itemBuilder:
                                       (BuildContext context, int index) {
                                     return ListTile(
                                         title: Text(
-                                      "• โปรโมชั่น ${widget.promotions[index].promotioname}",
+                                      "• โปรโมชั่น ${_viewModel.finishpaymentData!.promotions[index].promotioname}",
                                       style: const TextStyle(
                                           fontSize: 20,
                                           color: Color(0xFF0E4E89)),
                                     ));
                                   }),
-                            ))
+                            ))*/
                       ],
                     ),
                   ),
@@ -130,7 +129,7 @@ class _FinishState extends State<FinishPaymentView> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "ชื่อ : ${widget.memberdata?.memberUsername}",
+                          "ชื่อ : ${viewModel.finishpaymentData?.memberdata?.memberUsername}",
                           style: const TextStyle(
                               fontSize: 20, color: Color(0xFF0E4E89)),
                         ),
@@ -140,7 +139,7 @@ class _FinishState extends State<FinishPaymentView> {
                               TextStyle(fontSize: 20, color: Color(0xFF0E4E89)),
                         ),
                         Text(
-                          "จำนวนเต้ม : ${widget.memberdata?.point}",
+                          "จำนวนเต้ม : ${viewModel.finishpaymentData?.memberdata?.point}",
                           style: const TextStyle(
                               fontSize: 20, color: Color(0xFF0E4E89)),
                         )
@@ -154,7 +153,7 @@ class _FinishState extends State<FinishPaymentView> {
                   child: Container(
                       padding: const EdgeInsets.all(16),
                       child: Text(
-                        "เงินทอน ${widget.change} บาท",
+                        "เงินทอน ${viewModel.getChangeDetail().toString()} บาท",
                         style: const TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
@@ -170,7 +169,8 @@ class _FinishState extends State<FinishPaymentView> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.grey),
                       onPressed: () {
-                        print(widget.promotions);
+                        //print(widget.promotions);
+                        print(viewModel.getChangeDetail());
                       },
                       child: const Text(
                         "รับใบเสร็จ",

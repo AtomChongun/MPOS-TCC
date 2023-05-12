@@ -2,10 +2,12 @@ import 'package:mpos/Module/Promotions.dart';
 import 'package:mpos/Module/memberdata.dart';
 
 class FinishpaymentData {
-  Memberdata member;
-  late int change;
-  List<Promotions> promotions;
+  late Memberdata? memberdata;
+  late double? change;
+  late List<Promotions> promotions;
 
   FinishpaymentData(
-      {required this.member, required this.change, required this.promotions});
+      {required this.memberdata,
+      required this.change,
+      required this.promotions});
 }

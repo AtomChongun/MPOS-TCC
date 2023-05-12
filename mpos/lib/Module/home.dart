@@ -24,41 +24,7 @@ class _HomeState extends State<Home> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => FinishPaymentView(
-                              memberdata: Memberdata(
-                                  id: "555",
-                                  memberUsername: "jirawat",
-                                  point: 5,
-                                  call: "0626209688"),
-                              promotions: [
-                                Promotions(
-                                    promotioname: "ซื้อ 1 แถม 1",
-                                    amount: 6,
-                                    price: 5),
-                                Promotions(
-                                    promotioname: "ซื้อ 2 แถม 1",
-                                    amount: 6,
-                                    price: 5),
-                                Promotions(
-                                    promotioname: "ซื้อ 3 แถม 1",
-                                    amount: 6,
-                                    price: 5),
-                              ],
-                              change: 50,
-                            )),
-                  );
-                },
-                child: const Text("สะสมแต้ม")),
-            TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const FinishPaymentView(
-                              memberdata: null,
-                              change: null,
-                              promotions: [],
-                            )),
+                        builder: (context) => FinishPaymentView()),
                   );
                 },
                 child: const Text("ไม่สะสมแต้ม"))
