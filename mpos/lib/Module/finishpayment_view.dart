@@ -135,7 +135,6 @@ class _FinishState extends State<FinishPaymentView> {
                       ),
 
                       Visibility(
-                        visible: viewModel.isVisibleChange,
                         child: Container(
                             padding: const EdgeInsets.all(16),
                             child: Text(

@@ -10,8 +10,6 @@ class FinishpaymentViewModel {
   double? _change = 0.0;
   bool isVisibleMember = true;
   bool isVisiblePromo = true;
-  bool isVisibleChange = true;
-
   FinishpaymentServiceInterface service = FinishpaymentMockService();
 
   Future<FinishpaymentData?> getChangeDetail() async {
