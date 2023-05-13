@@ -7,14 +7,16 @@ class FinishpaymentMockService implements FinishpaymentServiceInterface {
   @override
   Future<FinishpaymentData> fethData() async {
     return FinishpaymentData(
-      memberdata: Memberdata(
-          id: "555", memberUsername: "jirawat", point: 5, call: "0626209688"),
-      promotions: [
-        Promotions(promotioname: "ซื้อ 1 แถม 1", amount: 6, price: 5),
-        Promotions(promotioname: "ซื้อ 2 แถม 1", amount: 6, price: 5),
-        Promotions(promotioname: "ซื้อ 3 แถม 1", amount: 6, price: 5),
-      ],
-      change: 50,
-    );
+        memberdata: Memberdata(
+            id: "555", memberUsername: "jirawat", point: 5, call: "0626209688"),
+        promotions: [
+          Promotions(promotioname: "ซื้อ 1 แถม 1", amount: 6, price: 5),
+          Promotions(promotioname: "ซื้อ 2 แถม 1", amount: 6, price: 5),
+          Promotions(promotioname: "ซื้อ 3 แถม 1", amount: 6, price: 5),
+        ],
+        change: 50);
+    /*memberdata: null,
+        promotions: null,
+        change: 0.0);*/
   }
 }

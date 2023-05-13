@@ -8,11 +8,24 @@ import '../service/finishpayment_service_interface.dart';
 class FinishpaymentViewModel {
   FinishpaymentData? finishpaymentData;
   double? _change = 0.0;
+  bool isVisibleMember = true;
+  bool isVisiblePromo = true;
+  bool isVisibleChange = true;
+
   FinishpaymentServiceInterface service = FinishpaymentMockService();
 
-  Future<double?> getChangeDetail() async {
+  Future<FinishpaymentData?> getChangeDetail() async {
     finishpaymentData = await service.fethData();
-    _change = finishpaymentData?.change;
-    return _change;
+    check();
+    return finishpaymentData;
+  }
+
+  check() async {
+    if (finishpaymentData?.memberdata?.memberUsername == null) {
+      isVisibleMember = false;
+    }
+    if (finishpaymentData!.promotions == null) {
+      isVisiblePromo = false;
+    }
   }
 }
