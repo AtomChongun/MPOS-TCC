@@ -50,6 +50,7 @@ class _FinishState extends State<FinishPaymentView> {
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
+
                       //Promotion
                       Visibility(
                         visible: viewModel.isVisiblePromo,
@@ -101,6 +102,7 @@ class _FinishState extends State<FinishPaymentView> {
                         ),
                       ),
 
+                      //สมาชิก
                       Visibility(
                         visible: viewModel.isVisibleMember,
                         child: Container(
@@ -134,6 +136,7 @@ class _FinishState extends State<FinishPaymentView> {
                         ),
                       ),
 
+                      //เงินทอน
                       Visibility(
                         child: Container(
                             padding: const EdgeInsets.all(16),
@@ -155,7 +158,7 @@ class _FinishState extends State<FinishPaymentView> {
                                 backgroundColor: Colors.grey),
                             onPressed: () async {
                               //print(widget.promotions);
-                              print(await viewModel.getChangeDetail());
+                              //print(await viewModel.getChangeDetail());
                             },
                             child: const Text(
                               "รับใบเสร็จ",
@@ -186,7 +189,7 @@ class _FinishState extends State<FinishPaymentView> {
                 ),
               );
             }
-            return LinearProgressIndicator();
+            return const CircularProgressIndicator();
           }),
     );
   }
