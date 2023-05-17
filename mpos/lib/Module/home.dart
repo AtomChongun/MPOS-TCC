@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
                         builder: (context) => FinishPaymentView()),
                   );
                 },
-                child: const Text("ไม่สะสมแต้ม"))
+                child: const Text("ENTER"))
           ],
         ),
       ),

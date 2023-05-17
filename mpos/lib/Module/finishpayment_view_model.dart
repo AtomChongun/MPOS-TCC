@@ -9,7 +9,7 @@ class FinishpaymentViewModel {
   bool isVisiblePromo = true;
   FinishpaymentServiceInterface service = FinishpaymentMockService();
 
-  Future<FinishpaymentData?> getChangeDetail() async {
+  Future<FinishpaymentData?> getDetail() async {
     finishpaymentData = await service.fethData();
     check();
     return finishpaymentData;
