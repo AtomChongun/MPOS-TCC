@@ -109,7 +109,7 @@ class _FinishState extends State<FinishPaymentView> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "ชื่อ : ${viewModel.finishpaymentData?.memberdata?.memberUsername}",
+                                  "ชื่อ : ${viewModel.finishpaymentData?.memberdata?.name}",
                                   style: const TextStyle(
                                       fontSize: 20, color: Color(0xFF0E4E89)),
                                 ),

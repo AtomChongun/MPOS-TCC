@@ -1,12 +1,14 @@
 class Memberdata {
-  late String id;
-  late String memberUsername;
+  late String memberID;
+  late String name;
   late int point;
-  late String call;
+  late String emai;
+  late String phone;
 
   Memberdata(
-      {required this.id,
-      required this.memberUsername,
+      {required this.memberID,
+      required this.name,
       required this.point,
-      required this.call});
+      required this.emai,
+      required this.phone});
 }

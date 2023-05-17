@@ -16,7 +16,7 @@ class FinishpaymentViewModel {
   }
 
   check() async {
-    if (finishpaymentData?.memberdata?.memberUsername == null) {
+    if (finishpaymentData?.memberdata?.name == null) {
       isVisibleMember = false;
     }
     if (finishpaymentData!.promotions == null) {
