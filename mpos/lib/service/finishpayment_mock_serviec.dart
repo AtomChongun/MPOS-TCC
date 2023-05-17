@@ -18,9 +18,6 @@ class FinishpaymentMockService implements FinishpaymentServiceInterface {
           Promotions(promotioname: "ซื้อ 3 แถม 1", amount: 6, price: 5),
         ],
         change: 50);
-    /*memberdata: null,
-        promotions: null,
-        change: 0.0);*/
   }
 
   @override

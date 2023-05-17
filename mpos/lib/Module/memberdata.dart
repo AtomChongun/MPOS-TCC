@@ -1,5 +1,3 @@
-import 'dart:math';
-
 class Memberdata {
   late String id;
   late String memberUsername;
